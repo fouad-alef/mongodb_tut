@@ -1,0 +1,23 @@
+{
+    "python.analysis.extraPaths": [
+        "./components/tutor/src"
+    ],
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100"
+    ],
+    "python.linting.flake8Args": [
+        "--max-line-length",
+        "100",
+        "--ignore=W605,E203,W503"
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.testing.pytestArgs": [
+        "components/tutor/"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

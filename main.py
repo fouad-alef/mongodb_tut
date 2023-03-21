@@ -5,7 +5,7 @@ import pprint
 from pymongo import MongoClient
 
 
-load_dotenv(find_dotenv())
+load_dotenv(find_dotenv("to_ignore/.env"))
 password = os.environ.get("MONGODB_PWD")
 connection_string = f"""mongodb+srv://fouad89ahmed:{password}@tutorial.bhzeiwx.mongodb.net/?retryWrites=true&w=majority"""
 

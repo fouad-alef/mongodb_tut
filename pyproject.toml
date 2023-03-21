@@ -10,6 +10,13 @@ packages = [{include = "mongodb_tut"}]
 python = "^3.9"
 pymongo = "^4.3.3"
 python-dotenv = "^1.0.0"
+beanie = "^1.17.0"
+domain = "^0.1.4"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+black = "^23.1.0"
+pydantic = "^1.10.6"
+asyncio = "^3.4.3"
 
 
 [build-system]
