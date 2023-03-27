@@ -1,18 +1,19 @@
-from beanie import init_beanie
-from beanie.operators import Set
-# from domain.model import Context, UserContext
-from motor.motor_asyncio import AsyncIOMotorClient
-from beanie import Document
-from pydantic import Field, BaseModel
 # from dotenv import find_dotenv, load_dotenv
 import asyncio
-import os
 import enum
-from dataclasses import dataclass
-from uuid import uuid4
-from typing import List
-from datetime import datetime 
 import logging
+import os
+from dataclasses import dataclass
+from datetime import datetime
+from typing import List
+from uuid import uuid4
+
+from beanie import Document, init_beanie
+from beanie.operators import Set
+
+# from domain.model import Context, UserContext
+from motor.motor_asyncio import AsyncIOMotorClient
+from pydantic import BaseModel, Field
 
 connection_string = f"""mongodb://root:password@localhost:27017/?authSource=admin&readPreference=primary&ssl=false&directConnection=true"""
 
@@ -142,6 +143,7 @@ class UserRegistration:
         )
         return result
 
+
     @staticmethod
     async def retrieve(user_request: User):
         user = await UserRegistration.user_exists(user_request)
@@ -156,7 +158,7 @@ class UserRegistration:
 async def main():
     await initialize()
     user = User(
-        user_id="12345",
+        user_id=str(uuid4()),
         role=Role.STUDENT,
         school_id=str(uuid4()),
         grade=4,
