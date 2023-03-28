@@ -1,22 +1,29 @@
 {
-    "python.analysis.extraPaths": [
-        "./components/tutor/src"
-    ],
+    "editor.formatOnSave": true,
     "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length",
         "100"
+    ],
+    "isort.args": [
+        "--profile",
+        "black"
     ],
     "python.linting.flake8Args": [
         "--max-line-length",
         "100",
         "--ignore=W605,E203,W503"
     ],
-    "python.linting.flake8Enabled": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
     "python.linting.pylintEnabled": false,
     "python.testing.pytestArgs": [
-        "components/tutor/"
+        "components"
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
